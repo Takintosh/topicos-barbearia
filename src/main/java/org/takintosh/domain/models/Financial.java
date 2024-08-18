@@ -1,13 +1,13 @@
 package org.takintosh.domain.models;
 
 public class Financial {
-    private Long id;
+    private int id;
     private double saleValue;
     private Product product;
     private Barber barber;
     private Client client;
 
-    public Financial(Long id, double saleValue, Product product, Barber barber, Client client) {
+    public Financial(int id, double saleValue, Product product, Barber barber, Client client) {
         this.id = id;
         this.saleValue = saleValue;
         this.product = product;
@@ -16,10 +16,10 @@ public class Financial {
     }
 
     // Getters and setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

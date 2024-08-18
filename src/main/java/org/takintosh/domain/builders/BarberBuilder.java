@@ -5,11 +5,11 @@ import org.takintosh.domain.models.Barber;
 import java.util.List;
 
 public class BarberBuilder {
-    private Long id;
+    private int id;
     private String name;
-    private List<String> schedules;
+    private String schedules;
 
-    public BarberBuilder withId(Long id) {
+    public BarberBuilder withId(int id) {
         this.id = id;
         return this;
     }
@@ -19,7 +19,7 @@ public class BarberBuilder {
         return this;
     }
 
-    public BarberBuilder withSchedules(List<String> schedules) {
+    public BarberBuilder withSchedules(String schedules) {
         this.schedules = schedules;
         return this;
     }

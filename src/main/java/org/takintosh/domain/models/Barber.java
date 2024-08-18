@@ -3,21 +3,21 @@ package org.takintosh.domain.models;
 import java.util.List;
 
 public class Barber {
-    private Long id;
+    private int id;
     private String name;
-    private List<String> schedules;
+    private String schedules;
 
-    public Barber(Long id, String name, List<String> schedules) {
+    public Barber(int id, String name, String schedules) {
         this.id = id;
         this.name = name;
         this.schedules = schedules;
     }
 
     // Getters and setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,10 +28,10 @@ public class Barber {
         this.name = name;
     }
 
-    public List<String> getSchedules() {
+    public String getSchedules() {
         return schedules;
     }
-    public void setSchedules(List<String> schedules) {
+    public void setSchedules(String schedules) {
         this.schedules = schedules;
     }
 }

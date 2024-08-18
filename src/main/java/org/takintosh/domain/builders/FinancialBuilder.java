@@ -6,13 +6,13 @@ import org.takintosh.domain.models.Financial;
 import org.takintosh.domain.models.Product;
 
 public class FinancialBuilder {
-    private Long id;
+    private int id;
     private double saleValue;
     private Product product;
     private Barber barber;
     private Client client;
 
-    public FinancialBuilder withId(Long id) {
+    public FinancialBuilder withId(int id) {
         this.id = id;
         return this;
     }

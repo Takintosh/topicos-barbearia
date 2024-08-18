@@ -3,13 +3,13 @@ package org.takintosh.domain.builders;
 import org.takintosh.domain.models.Product;
 
 public class ProductBuilder {
-    private Long id;
+    private int id;
     private String name;
     private double price;
     private double commission;
     private int quantity;
 
-    public ProductBuilder withId(Long id) {
+    public ProductBuilder withId(int id) {
         this.id = id;
         return this;
     }

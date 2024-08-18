@@ -7,12 +7,12 @@ import org.takintosh.domain.models.Client;
 import java.time.LocalDateTime;
 
 public class AppointmentBuilder {
-    private Long id;
+    private int id;
     private LocalDateTime date;
     private Client client;
     private Barber barber;
 
-    public AppointmentBuilder withId(Long id) {
+    public AppointmentBuilder withId(int id) {
         this.id = id;
         return this;
     }

@@ -1,13 +1,13 @@
 package org.takintosh.domain.models;
 
 public class Product {
-    private Long id;
+    private int id;
     private String name;
     private double price;
     private double comission;
     private int quantity;
 
-    public Product(Long id, String name, double price, double comission, int quantity) {
+    public Product(int id, String name, double price, double comission, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -16,10 +16,10 @@ public class Product {
     }
 
     // Getters and setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
