@@ -2,17 +2,9 @@ package org.takintosh.domain.builders;
 
 import org.takintosh.domain.models.Barber;
 
-import java.util.List;
-
 public class BarberBuilder {
-    private int id;
     private String name;
     private String schedules;
-
-    public BarberBuilder withId(int id) {
-        this.id = id;
-        return this;
-    }
 
     public BarberBuilder withName(String name) {
         this.name = name;
@@ -25,6 +17,6 @@ public class BarberBuilder {
     }
 
     public Barber build() {
-        return new Barber(id, name, schedules);
+        return new Barber(name, schedules);
     }
 }

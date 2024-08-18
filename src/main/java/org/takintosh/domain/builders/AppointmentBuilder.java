@@ -7,15 +7,9 @@ import org.takintosh.domain.models.Client;
 import java.time.LocalDateTime;
 
 public class AppointmentBuilder {
-    private int id;
     private LocalDateTime date;
     private Client client;
     private Barber barber;
-
-    public AppointmentBuilder withId(int id) {
-        this.id = id;
-        return this;
-    }
 
     public AppointmentBuilder withDate(LocalDateTime date) {
         this.date = date;
@@ -33,6 +27,7 @@ public class AppointmentBuilder {
     }
 
     public Appointment build() {
-        return new Appointment(id, date, client, barber);
+        return new Appointment(date, client, barber);
     }
+
 }

@@ -6,16 +6,10 @@ import org.takintosh.domain.models.Financial;
 import org.takintosh.domain.models.Product;
 
 public class FinancialBuilder {
-    private int id;
     private double saleValue;
     private Product product;
     private Barber barber;
     private Client client;
-
-    public FinancialBuilder withId(int id) {
-        this.id = id;
-        return this;
-    }
 
     public FinancialBuilder withSaleValue(double saleValue) {
         this.saleValue = saleValue;
@@ -38,6 +32,7 @@ public class FinancialBuilder {
     }
 
     public Financial build() {
-        return new Financial(id, saleValue, product, barber, client);
+        return new Financial(saleValue, product, barber, client);
     }
+
 }
