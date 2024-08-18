@@ -1,23 +1,36 @@
 package org.takintosh.domain.models;
 
-import java.util.List;
-
 public class Barber {
-    private int id;
+    private Integer id;
     private String name;
     private String schedules;
 
-    public Barber(int id, String name, String schedules) {
-        this.id = id;
+    public Barber(String name, String schedules) {
+        // Validate name
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        // Validate schedules
+        if (schedules == null || schedules.isEmpty()) {
+            throw new IllegalArgumentException("Schedules cannot be empty");
+        }
+        // Validate schedules format
+        if (!schedules.matches("\\d{2}:\\d{2}-\\d{2}:\\d{2}")) {
+            throw new IllegalArgumentException("Invalid schedules format");
+        }
+
         this.name = name;
         this.schedules = schedules;
     }
 
     // Getters and setters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("ID must be greater than 0");
+        }
         this.id = id;
     }
 
@@ -25,6 +38,9 @@ public class Barber {
         return name;
     }
     public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
         this.name = name;
     }
 
@@ -32,6 +48,12 @@ public class Barber {
         return schedules;
     }
     public void setSchedules(String schedules) {
+        if (schedules == null || schedules.isEmpty()) {
+            throw new IllegalArgumentException("Schedules cannot be empty");
+        }
+        if (!schedules.matches("\\d{2}:\\d{2}-\\d{2}:\\d{2}")) {
+            throw new IllegalArgumentException("Invalid schedules format");
+        }
         this.schedules = schedules;
     }
 }
