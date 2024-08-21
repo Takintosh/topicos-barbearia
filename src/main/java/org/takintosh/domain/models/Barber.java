@@ -1,9 +1,13 @@
 package org.takintosh.domain.models;
 
+import org.takintosh.domain.strategies.*;
+
 public class Barber {
     private Integer id;
     private String name;
     private String schedules;
+    private int numberOfCuts;
+    private CommissionStrategy commissionStrategy;
 
     public Barber(String name, String schedules) {
         // Validate name
@@ -21,6 +25,21 @@ public class Barber {
 
         this.name = name;
         this.schedules = schedules;
+    }
+
+    // Commission Strategy
+    private void setCommissionStrategy() {
+        if (numberOfCuts >= 1 && numberOfCuts <= 2) {
+            this.commissionStrategy = new NoBonusCommission();
+        } else if (numberOfCuts >= 3 && numberOfCuts <= 5) {
+            this.commissionStrategy = new OnePercentBonusCommission();
+        } else if (numberOfCuts > 6) {
+            this.commissionStrategy = new FivePercentBonusCommission();
+        }
+    }
+
+    public double calculateCommission(double baseCommission) {
+        return commissionStrategy.calculateCommission(baseCommission);
     }
 
     // Getters and setters
